@@ -1,4 +1,8 @@
 import socket
+from random import randint
+
+buff_size = 16
+head_size = 16
 end_of_header = "|||"
 
 class SocketTCP:
@@ -9,15 +13,34 @@ class SocketTCP:
         secuencia = None
 
     def bind(self, address):
-        direccion_origen = address
+        self.sock.bind(address)
+        self.direccion_origen = address
 
-    def connect(address):
-        
-        direccion_destino = address
+    def connect(self,address):
+        self.sock.settimeout(1)
+        seq = randint(0,100)
+        tcp_message = create_tcp_msg(SYN=1,SEQ=seq)
+        self.sock.sendto(tcp_message.encode(),address)
+        #manejar error de "TimeoutError"
+        message, address = self.sock.recvfrom()
+        message = self.parse_segment(message.decode())
+        if message["SYN"] == 1 and message["ACK"] == 1 and message["FIN"] == 0 and message["SEQ"]==seq+1 and message["DATOS"]=="":
+            tcp_message = create_tcp_msg(ACK=1,SEQ=seq+2)
+            self.sock.sendto(tcp_message.encode(),address)
+            self.sock.direccion_destino = address
 
 
-    def accept():
-        pass 
+    def accept(self):
+        self.sock.settimeout(1)
+        #manejar error de "TimeoutError"
+        message,address = self.sock.recvfrom()
+        message = self.parse_segment(message.decode())
+        if message["SYN"] == 1 and message["ACK"] == 0 and message["FIN"] == 0  and message["DATOS"]=="":
+            seq = message["SEQ"]
+            message = create_tcp_msg(SYN=1,ACK=1,SEQ=seq+1)
+            self.sock.sendto(message.encode(),address)
+            self.direccion_destino = address
+
 
     def parse_segment(self, segment):
         parsed_seg = {}
@@ -51,7 +74,7 @@ class SocketTCP:
 
         return segment
     
-def create_tcp_msg(msg, SYN=0, ACK=0, FIN=0, SEQ=0):
+def create_tcp_msg(msg="", SYN=0, ACK=0, FIN=0, SEQ=0):
     segment = ""
     segment += str(SYN) + "|||"
     segment += str(ACK) + "|||"
