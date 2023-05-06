@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feria Online! Pedidos</title>
+    <style>
+        h1{
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: xxx-large;
+        }
+        table, th, td {
+            border: 1px solid;
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+        tr:nth-child() {background-color: #f2f2f2;}
+        tr:hover {
+            background-color: coral;
+        }
+        table {
+            padding: 10px;
+            background-color: rgb(126, 185, 71);
+            border: 1px solid darkolivegreen;
+            text-align: center;
+            margin: 5px;
+        }
+        body {
+            background-image: url("foto2.jpg");
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 10px;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <h1>Historial de pedidos</h1>
+    <table id="tabla-pedidos">
+        <tr>
+            <th scope="col" id="comuna">Comuna</th>
+            <th scope="col" id="tipo">Tipo</th>
+            <th scope="col" id="descripcion">Descripción</th>
+            <th scope="col" id="cantidad">Cantidad</th>
+            <th scope="col" id="nombre">Nombre solicitante</th>
+
+        </tr>
+        <tr>
+            <td>Peor es nada</td>
+            <td>Fruta</td>
+            <td>Me encantaría mucha fruta porque me gusta la fruta</td>
+            <td>Mucha</td>
+            <td>Antonio Torga</td>
+        </tr>
+        <tr>
+            <td>Salsipuedes</td>
+            <td>Verdura</td>
+            <td>Me hacen falta unos apios para hacerle una cazuela a mis niños</td>
+            <td>12</td>
+            <td>Sofía Novoa</td>
+        </tr>
+        <tr>
+            <td>Chigualoco</td>
+            <td>Fruta</td>
+            <td>KERO UVA</td>
+            <td>1</td>
+            <td>Woody Harrelson</td>
+        </tr>
+        <tr>
+            <td>Las Coimas</td>
+            <td>Fruta</td>
+            <td>Necesito una fruta, solo una, de verdad ni una más que una.</td>
+            <td>Una (1)</td>
+            <td>Iwanita del Caserio</td>
+        </tr>
+        <tr>
+            <td>La calor</td>
+            <td>Verdura</td>
+            <td>Necesito 3 alcachofas para mis nietos</td>
+            <td>3</td>
+            <td>Antonio Torga</td>
+        </tr>
+    </table>
+    <script>
+        let table = document.getElementById("tabla-pedidos");
+        const tableClick =  () => (window.location.href = "./informacion-pedido.html")
+        table.addEventListener("click",tableClick)
+    </script>
+</body>
+</html>
