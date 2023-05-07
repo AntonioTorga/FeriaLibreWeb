@@ -1,0 +1,26 @@
+h1{
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: xxx-large;
+}
+table, th, td {
+    border: 1px solid;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+tr:nth-child() {background-color: #f2f2f2;}
+tr:hover {
+    background-color: coral;
+}
+table {
+    padding: 10px;
+    background-color: rgb(126, 185, 71);
+    border: 1px solid darkolivegreen;
+    text-align: center;
+    margin: 5px;
+}
+body {
+    background-image: url("foto2.jpg");
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}

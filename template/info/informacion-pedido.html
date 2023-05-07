@@ -1,0 +1,54 @@
+{% extends 'informacion-base.html' %}
+
+{% block title %}¡Feria Online! Información pedidos{% endblock %}
+
+{% block content %}
+    <h1>Información pedidos</h1>
+    <div class = "informacion">
+        <div id="region-info" class="grupo-info"> 
+            <label>Region: </label>
+            <p>Región del Libertador Bernardo O'Higgins</p>
+        </div>
+        <div id="comuna-info" class="grupo-info"> 
+            <label>Comuna: </label>
+            <p>Peor es nada</p>
+        </div>
+        <div id="tipo-info" class="grupo-info"> 
+            <label>Tipo: </label>
+            <p>Fruta</p>
+        </div>
+        <div id="descripcion-info" class="grupo-info"> 
+            <label>Descripcion: </label>
+            <p>Me encantaría mucha fruta porque me gusta la fruta</p>
+        </div>
+        <div id="cantidad-info" class="grupo-info"> 
+            <label>Cantidad:</label>
+            <p>Mucha</p>
+        </div>
+        <div id="nombre-info" class="grupo-info"> 
+            <label>Nombre solicitante:</label>
+            <p>Antonio Torga</p>
+        </div>
+        <div id="email-info" class="grupo-info"> 
+            <label>Email: </label>
+            <p>ato_mono@hotmail.com</p>
+        </div>
+        <div id="celular-info" class="grupo-info"> 
+            <label>Celular: </label>
+            <p>975592999</p>
+        </div>
+    </div>
+    <div class = "button">
+        <button type="button" id="volver-inicio">
+            Volver a inicio
+        </button>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        const buttonInicio = () => window.location.href = "./inicio.html";
+        let button = document.getElementById("volver-inicio")
+        button.addEventListener("click", buttonInicio)
+    </script>
+{% endblock %}

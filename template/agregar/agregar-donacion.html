@@ -1,0 +1,89 @@
+{% extends 'agregar-base.html' %}
+
+{% block title %} ¡Feria Online! Donar {% endblock %}
+
+{% block content %}
+    <h1>¡Haz una donación!</h1>
+    <div class="container">
+        <form class="formulario" id="form-donacion">
+            <div id="region-input" class="grupo-input"> 
+                <label for="region">Región:</label>
+                <input id = "region" list="regiones" name="region">
+                <datalist id = "regiones"> 
+
+                </datalist>
+            </div>
+            <div id="comuna-input" class="grupo-input"> 
+                <label for="comuna">Comuna:</label>
+                <input id= "comuna" list="comunas" name="comuna">
+                <datalist id = "comunas"> 
+
+                </datalist>
+            </div>
+            <div id="calle-numero-input" class="grupo-input"> 
+                <label for="calle-numero">Calle y número:</label>
+                <input id= "calle-numero" type= "text" size = 80 name="calle-numero">
+            </div>
+            <div id="tipo-input" class="grupo-input"> 
+                <label for="tipo">Tipo:</label>
+                <input id="tipo" list="tipos" name="tipo">
+                <datalist id = "tipos"> 
+                    <option value="Fruta">
+                    <option value="Verdura">
+                    <option value="Otro">
+                </datalist>
+            </div>
+            <div id="cantidad-input" class="grupo-input"> 
+                <label for="cantidad-numero">Cantidad:</label>
+                <input  id="cantidad" type= "text" size = 10 name="cantidad">
+            </div>
+            <div id="fecha-disponibilidad-input" class="grupo-input"> 
+                <label for="fecha-disponibilidad-numero">Fecha de disponibilidad:</label>
+                <input  id="fecha-disponibilidad" type= "text" size = 10 name="fecha-disponibilidad">
+            </div>
+            <div id="descripcion-input" class="grupo-input"> 
+                <label for="descripcion">Descripción:</label>
+                <input  id="descripcion" type= "text" size = 80 name="descripcion">
+            </div>
+            <div id="condiciones-input" class="grupo-input"> 
+                <label for="condiciones">Condiciones para retirar:</label>
+                <input id= "condiciones" type= "text" size = 80 name="condiciones">
+            </div>
+            <div id ="fotos-input" class="grupo-input">
+            <div id="foto-1-input" class="grupo-foto-input"> 
+                <label for="foto-1">Imagen 1</label>
+                <input id= "foto-1" type= "file" name="foto-1">
+            </div>
+            <div id="foto-2-input" class="grupo-foto-input"> 
+                <label for="foto-2">Imagen 2</label>
+                <input id= "foto-2" type= "file" name="foto-2">
+            </div>
+            <div id="foto-3-input" class="grupo-foto-input"> 
+                <label for="foto-3">Imagen 3</label>
+                <input id= "foto-3" type= "file" name="foto-3">
+            </div>
+            </div>
+            <div id="nombre-input" class="grupo-input"> 
+                <label for="nombre">Nombre:</label>
+                <input id="nombre" type= "text" size = 80 name="nombre">
+            </div>
+            <div id="email-input" class="grupo-input"> 
+                <label for="email">Email contacto:</label>
+                <input id="email" type= "text" size = 30 name="email">
+            </div>
+            <div id="celular-input" class="grupo-input"> 
+                <label for="celular">Número celular contacto:</label>
+                <input id="celular" type= "text" size = 15 name="celular">
+            </div>
+            <div class="botones">
+                <button type="button" id="submit-donacion">
+                  Agregar donación
+                </button>
+              </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script lang="javascript" src={{ url_for('static', filename='js/agregar-donacion.js') }}> </script>
+{% endblock %}

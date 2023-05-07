@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}¡Feria Online! Inicio{% endblock %}
+
+{%block style%}
+    <style>
+        h1{
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: xxx-large;
+        }
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            font-size: x-large;
+            background-color: rgb(112, 204, 75);
+            padding: 5px;
+        }
+        .navbar-page {
+            border: 2px solid coral;
+        }
+        body {
+            background-image: url("foto2.jpg");
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            padding: 10px;
+        }
+        .image {
+            padding-top: 10px;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <h1>¡Feria Online!</h1>
+    <div class="navbar">
+        <a class="navbar-page" href="./agregar-donacion.html">Agregar donación</a>
+        <a class="navbar-page" href="./agregar-pedido.html">Agregar pedido</a>
+        <a class="navbar-page" href="./ver-donaciones.html">Ver donaciones</a>
+        <a class="navbar-page" href="./ver-pedidos.html">Ver pedidos</a>
+    </div>
+    <div class="image">
+        <img  src="horrible.jpg" alt="¡Feria Online WUJU!" width="640" height="428">
+    </div>
+{% endblock %}

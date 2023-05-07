@@ -1,0 +1,65 @@
+{% extends 'ver-base.html' %}
+
+{% block title %} ¡Feria Online! Donaciones {% endblock %}
+
+{% block content %}
+    <h1>Historial de donaciones</h1>
+    <table id="tabla-donaciones">
+        <tr>
+            <th scope="col" id="comuna">Comuna</th>
+            <th scope="col" id="tipo">Tipo</th>
+            <th scope="col" id="cantidad">Cantidad</th>
+            <th scope="col" id="fecha">Fecha</th>
+            <th scope="col" id="nombre">Nombre</th>
+            <th scope="col" id="nombre">Foto</th>
+        </tr>
+        <tr>
+            <td>Peor es nada</td>
+            <td>Fruta</td>
+            <td>100 kg</td>
+            <td>30/09/2022</td>
+            <td>Sofía Novoa</td>
+            <td><img src="foto1.jpg" height=120 width=120></th>
+        </tr>
+        <tr>
+            <td>Salsipuedes</td>
+            <td>Verdura</td>
+            <td>12 apios</td>
+            <td>30/01/2001</td>
+            <td>Antonio Torga</td>
+            <td><img src="foto4.jpg" height=120 width=120></th>
+        </tr>
+        <tr>
+            <td>Chigualoco</td>
+            <td>Fruta</td>
+            <td>1 uva</td>
+            <td>11/01/2002</td>
+            <td>Iwanita del Caserio</td>
+            <td><img src="foto3.jpg" height=120 width=120></th>
+        </tr>
+        <tr>
+            <td>Las Coimas</td>
+            <td>Fruta</td>
+            <td>1 unidad</td>
+            <td>11/11/2011</td>
+            <td>Woody Harrelson</td>
+            <td><img src="foto2.jpg" height=120 width=120></th>
+        </tr>
+        <tr>
+            <td>La calor</td>
+            <td>Verdura</td>
+            <td>3 unidad</td>
+            <td>22/04/1997</td>
+            <td>AtitoTorga</td>
+            <td><img src="foto5.jpg" height=120 width=120></th>
+        </tr>
+    </table>
+{% endblock %}
+
+{% block script %}
+    <script>
+        let table = document.getElementById("tabla-donaciones");
+        const tableClick =  () => (window.location.href = "./informacion-donacion.html")
+        table.addEventListener("click",tableClick)
+    </script>
+{% endblock %}

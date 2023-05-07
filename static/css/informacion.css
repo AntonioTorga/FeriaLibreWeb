@@ -1,0 +1,27 @@
+label {
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: whitesmoke
+}
+button {
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+h1 {
+    font-size: xxx-large;
+    font-family: "Lucida Console", "Courier New", monospace;
+
+}
+.informacion {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: space-around;
+    background-color: rgb(126, 185, 71);
+}
+.grupo-info {
+    padding: 10px;
+    border-color: darkolivegreen;
+    border-width:2px;
+    border-style:solid;
+    margin: 5px;
+}
