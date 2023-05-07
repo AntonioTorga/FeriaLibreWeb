@@ -1,4 +1,4 @@
-{% extends 'ver-base.html' %}
+{% extends 'ver/ver-base.html' %}
 
 {% block title %} ¡Feria Online! Donaciones {% endblock %}
 
@@ -59,7 +59,7 @@
 {% block script %}
     <script>
         let table = document.getElementById("tabla-donaciones");
-        const tableClick =  () => (window.location.href = "./informacion-donacion.html")
+        const tableClick =  () => (window.location.href = "./info-donacion")
         table.addEventListener("click",tableClick)
     </script>
 {% endblock %}

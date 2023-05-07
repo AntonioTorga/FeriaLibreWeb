@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}¡Feria Online! Inicio{% endblock %}
+
+{%block style1%}
+<link
+    rel= "stylesheet"
+    href = "{{ url_for('static', filename= 'css/inicio.css') }}"
+/> 
+{% endblock %}
+{% block content %}
+    <h1>¡Feria Online!</h1>
+    <div class="navbar">
+        <a class="navbar-page" href="/donar">Agregar donación</a>
+        <a class="navbar-page" href="/pedir">Agregar pedido</a>
+        <a class="navbar-page" href="/ver-donaciones">Ver donaciones</a>
+        <a class="navbar-page" href="/ver-pedidos">Ver pedidos</a>
+    </div>
+    <div class="image">
+        <img  src="{{url_for('static', filename= 'media/horrible.jpg')}}" alt="¡Feria Online WUJU!" width="640" height="428">
+    </div>
+{% endblock %}

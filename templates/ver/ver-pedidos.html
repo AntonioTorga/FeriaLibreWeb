@@ -1,3 +1,4 @@
+{% extends 'ver/ver-base.html' %}
 {% block title %}¡Feria Online! Pedidos {% endblock %}
 
 {% block content %}
@@ -52,7 +53,7 @@
 {% block script %}
     <script>
         let table = document.getElementById("tabla-pedidos");
-        const tableClick =  () => (window.location.href = "./informacion-pedido.html")
+        const tableClick =  () => (window.location.href = "/info-pedido")
         table.addEventListener("click",tableClick)
     </script>
 {% endblock %}

@@ -18,7 +18,6 @@ table {
     margin: 5px;
 }
 body {
-    background-image: url("foto2.jpg");
     display: flex;
     justify-content: center;
     flex-direction: column;

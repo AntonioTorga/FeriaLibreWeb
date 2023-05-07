@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,8 +10,8 @@
 
     body {
     font-family: "Lucida Console", "Courier New", monospace;
-    background-image: {{ url_for('static', filename="media/foto-2.jpg") }};
     padding: 10px;
+    background-image: url("{{ url_for('static', filename='media/foto2.jpg') }}");
     }
     </style>
     {% block style1 %} {% endblock %}
