@@ -7,6 +7,7 @@ app = Flask(__name__)
 def inicio():
     return render_template("inicio.html")
 
+
 @app.route("/donar", methods = ['GET','POST'])
 def donar():
     if request.method == 'POST':
@@ -23,6 +24,7 @@ def donar():
                                 request.form.get('email'),
                                 request.form.get('celular'),
                              )
+        print("yeah")
     elif request.method == 'GET':
         return render_template("agregar/agregar-donacion.html")
 
@@ -36,12 +38,13 @@ def pedir():
                                 request.form.get('cantidad'),
                                 request.form.get('nombre'),
                                 request.form.get('email'),
+                                
                                 request.form.get('celular'),
                                 )
     elif request.method == 'GET':
         return render_template("agregar/agregar-pedido.html")
-
-@app.route("/ver-donaciones/<int:page>", defaults= {'page':0},  methods = ['GET'])
+@app.route("/ver-donaciones/", defaults= {'page':0})
+@app.route("/ver-donaciones/<int:page>",  methods = ['GET'])
 def verDonaciones(page):
     if request.method == 'GET':
         data = []

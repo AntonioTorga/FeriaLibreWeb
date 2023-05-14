@@ -70,7 +70,7 @@ let regionesList = []
 for (let x in data["regiones"]){
     regionesList.push(data["regiones"][x]["nombre"]);
 }
-const butt_inicio = () => window.location.href = "./inicio.html";
+const butt_inicio = () => window.location.href = "/";
 const buttyesFun= () => {
     let div_conf = document.getElementById("confirm");
     div_conf.innerHTML="";

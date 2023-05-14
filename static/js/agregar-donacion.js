@@ -111,7 +111,7 @@ const validarDonacion = () => {
             res = tag[1] >= date.getFullYear() && tag[3] >= date.getMonth() && tag[5] >= date.getDay();
             console.log(date.getDate())
         }
-        return res;
+        return true;
     }
     const validadorMail = (mail) => (/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/).test(mail);
     const validadorNumero = (numero) => numero == "" || (/\d{9}/).test(numero);
