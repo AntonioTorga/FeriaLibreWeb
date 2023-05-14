@@ -72,6 +72,8 @@ for (let x in data["regiones"]){
 }
 const butt_inicio = () => window.location.href = "/";
 const buttyesFun= () => {
+    let form_ped = document.getElementById('form-pedido')
+    form_ped.submit();
     let div_conf = document.getElementById("confirm");
     div_conf.innerHTML="";
     let new_prompt = document.createElement("h3");
@@ -179,7 +181,7 @@ const validarPedido = () => {
         question.appendChild(prompt);
         let butt_yes = document.createElement("button");
         let butt_no = document.createElement("button");
-        butt_yes.type = "button";
+        butt_yes.type = "submit";
         butt_no.type = "button";
         butt_yes.innerText = "Sí, confirmo";
         butt_no.innerText = "No, quiero volver al formulario";

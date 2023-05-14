@@ -12,48 +12,23 @@
             <th scope="col" id="nombre">Nombre solicitante</th>
 
         </tr>
-        <tr>
-            <td>Peor es nada</td>
-            <td>Fruta</td>
-            <td>Me encantaría mucha fruta porque me gusta la fruta</td>
-            <td>Mucha</td>
-            <td>Antonio Torga</td>
+        {% if data %}
+            {% for pedido in data %}
+        <tr id = "{{pedido.id}}">
+            <td>{{pedido.comuna}}</td>
+            <td>{{pedido.tipo}}</td>
+            <td>{{pedido.descripcion}}</td>
+            <td>{{pedido.cantidad}}</td>
+            <td>{{pedido.nombre}}</td>
         </tr>
-        <tr>
-            <td>Salsipuedes</td>
-            <td>Verdura</td>
-            <td>Me hacen falta unos apios para hacerle una cazuela a mis niños</td>
-            <td>12</td>
-            <td>Sofía Novoa</td>
-        </tr>
-        <tr>
-            <td>Chigualoco</td>
-            <td>Fruta</td>
-            <td>KERO UVA</td>
-            <td>1</td>
-            <td>Woody Harrelson</td>
-        </tr>
-        <tr>
-            <td>Las Coimas</td>
-            <td>Fruta</td>
-            <td>Necesito una fruta, solo una, de verdad ni una más que una.</td>
-            <td>Una (1)</td>
-            <td>Iwanita del Caserio</td>
-        </tr>
-        <tr>
-            <td>La calor</td>
-            <td>Verdura</td>
-            <td>Necesito 3 alcachofas para mis nietos</td>
-            <td>3</td>
-            <td>Antonio Torga</td>
-        </tr>
+        <script>
+            document.getElementById("{{pedido.id}}").addEventListener("click", () => (window.location.href = "/info-pedido/{{pedido.id}}"))
+        </script>
+            {% endfor %}
+        {% endif %}
     </table>
 {% endblock %}
 
 {% block script %}
-    <script>
-        let table = document.getElementById("tabla-pedidos");
-        const tableClick =  () => (window.location.href = "/info-pedido")
-        table.addEventListener("click",tableClick)
-    </script>
+
 {% endblock %}

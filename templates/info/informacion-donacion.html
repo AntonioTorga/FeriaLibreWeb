@@ -4,38 +4,40 @@
 
 {% block content %}
     <h1>Información donaciones</h1>
+    {% if data %}
+
     <div class = "informacion">
         <div id="region-info" class="grupo-info"> 
             <label>Region: </label>
-            <p>Región del Libertador Bernardo O'Higgins</p>
+            <p>{{data.region}}</p>
         </div>
         <div id="comuna-info" class="grupo-info"> 
             <label>Comuna: </label>
-            <p>Peor es nada</p>
+            <p>{{data.comuna}}</p>
         </div>
         <div id="calle-numero-info" class="grupo-info"> 
             <label>Calle y número: </label>
-            <p>Avda. Pesherman, Calle Wallaby 42</p>
+            <p>{{data.calle_numero}}</p>
         </div>
         <div id="tipo-info" class="grupo-info"> 
             <label>Tipo: </label>
-            <p>Fruta</p>
+            <p>{{data.tipo}}</p>
         </div>
         <div id="cantidad-info" class="grupo-info"> 
             <label>Cantidad:</label>
-            <p>Mucha</p>
+            <p>{{data.cantidad}}</p>
         </div>
         <div id="fecha-disponibilidad-info" class="grupo-info"> 
             <label>Fecha de disponibilidad:</label>
-            <p>2023-4-24</p>
+            <p>{{data.fecha_disponibilidad}}</p>
         </div>
         <div id="descripcion-info" class="grupo-info"> 
             <label>Descripcion: </label>
-            <p>Me encantaría mucha fruta porque me gusta la fruta</p>
+            <p>{{data.descripcion}}</p>
         </div>
         <div id="condiciones-info" class="grupo-info"> 
             <label>Condiciones:</label>
-            <p>Darme un abrazo</p>
+            <p>{{data.condiciones_retirar}}</p>
         </div>
         <div id="foto1-info" class="grupo-info"> 
             <label>Imagen 1:</label>
@@ -51,17 +53,19 @@
         </div>
         <div id="nombre-info" class="grupo-info"> 
             <label>Nombre solicitante:</label>
-            <p>Antonio Torga</p>
+            <p>{{data.nombre}}</p>
         </div>
         <div id="email-info" class="grupo-info"> 
             <label>Email: </label>
-            <p>ato_mono@hotmail.com</p>
+            <p>{{data.email}}</p>
         </div>
         <div id="celular-info" class="grupo-info"> 
             <label>Celular: </label>
-            <p>975592999</p>
+            <p>{{data.celular}}</p>
         </div>
     </div>
+    {% endif %}
+
     <div class = "button">
         <button type="button" id="volver-inicio">
             Volver a inicio

@@ -62,6 +62,27 @@ def get_pedido_by_id(id):
     pedido = cursor.fetchone()
     return pedido
 
+# Comuna
+def get_comuna_and_region_by_comuna_name(name):
+    conn = get_conn()
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM comuna WHERE nombre=%s',(name,))
+    pedido = cursor.fetchone()
+    id_comuna, _, region_id = pedido 
+    return id_comuna,region_id
+def get_comuna_name_and_region_name_by_comuna_id(id):
+    conn = get_conn()
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM comuna WHERE id=%s',(id,))
+    comuna = cursor.fetchone()
+    _, nombre_com, region_id = comuna 
+    cursor.execute('SELECT * FROM region WHERE id=%s',(region_id,))
+    region = cursor.fetchone()
+    _, region_name = region
+    return nombre_com,region_name
+
+
+
 # FOTOS
 
 def insert_into_foto(ruta_archivo, nombre_archivo, donacion_id):

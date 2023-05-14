@@ -72,6 +72,8 @@ for (let x in data["regiones"]){
 }
 const butt_inicio = () => window.location.href = "/";
 const buttyesFun= () => {
+    let form_don = document.getElementById('form-donacion')
+    form_don.submit();
     let div_conf = document.getElementById("confirm");
     div_conf.innerHTML="";
     let new_prompt = document.createElement("h3");
@@ -111,7 +113,7 @@ const validarDonacion = () => {
             res = tag[1] >= date.getFullYear() && tag[3] >= date.getMonth() && tag[5] >= date.getDay();
             console.log(date.getDate())
         }
-        return true;
+        return res;
     }
     const validadorMail = (mail) => (/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/).test(mail);
     const validadorNumero = (numero) => numero == "" || (/\d{9}/).test(numero);
@@ -211,7 +213,7 @@ const validarDonacion = () => {
         question.appendChild(prompt);
         let butt_yes = document.createElement("button");
         let butt_no = document.createElement("button");
-        butt_yes.type = "button";
+        butt_yes.type = "submit";
         butt_no.type = "button";
         butt_yes.innerText = "Sí, confirmo";
         butt_no.innerText = "No, quiero volver al formulario";
@@ -249,6 +251,8 @@ const comunasSelect = () => {
         }
     }
 }
+
+
 regionInput.addEventListener("input", comunasSelect)
 let submitBtn = document.getElementById("submit-donacion");
 submitBtn.addEventListener("click", validarDonacion); 
