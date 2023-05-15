@@ -137,7 +137,6 @@ const validarDonacion = () => {
         const opc = ["Fruta", "Verdura", "Otro"];
         return opc.includes(tipo);
     }
-    //VALIDADORDIAHORAFECHA
     let regionInput = document.getElementById("region");
     let comunaInput = document.getElementById("comuna");
     let calleNumeroInput = document.getElementById("calle-numero");
