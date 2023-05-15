@@ -22,6 +22,7 @@ def get_conn():
 
 # DONACIONES
 def insert_into_donacion(comuna_id, calle_numero, tipo, cantidad, fecha_disponibilidad, descripcion, condiciones_retirar, nombre, email, celular):
+
     conn = get_conn()
     cursor = conn.cursor()
     cursor.execute('INSERT INTO donacion (comuna_id, calle_numero, tipo, cantidad, fecha_disponibilidad, descripcion, condiciones_retirar, nombre, email, celular) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);',(comuna_id, calle_numero, tipo, cantidad, fecha_disponibilidad, descripcion, condiciones_retirar, nombre, email, celular) )
@@ -31,7 +32,7 @@ def insert_into_donacion(comuna_id, calle_numero, tipo, cantidad, fecha_disponib
 def get_five_donacion(page):
     conn = get_conn()
     cursor = conn.cursor()
-    cursor.execute('SELECT id, comuna_id, calle_numero, tipo, cantidad, fecha_disponibilidad, descripcion, condiciones_retirar, nombre, email, celular FROM donacion ORDER BY id DESC LIMIT %s,5',(page,))
+    cursor.execute('SELECT id, comuna_id, calle_numero, tipo, cantidad, fecha_disponibilidad, descripcion, condiciones_retirar, nombre, email, celular FROM donacion ORDER BY id DESC LIMIT %s,5',(page*5,))
     pedidos = cursor.fetchall()
     return pedidos
 
@@ -42,6 +43,12 @@ def get_donacion_by_id(id):
     donacion = cursor.fetchone()
     return donacion
 
+def get_amount_donaciones():
+    conn = get_conn()
+    cursor = conn.cursor()
+    cursor.execute('SELECT COUNT(*) FROM donacion;')
+    amount = cursor.fetchone()
+    return amount
 # PEDIDOS
 def insert_into_pedido(comuna_id, tipo, descripcion, cantidad, nombre_solicitante, email_solicitante, celular_solicitante):
     conn = get_conn()
@@ -65,6 +72,13 @@ def get_pedido_by_id(id):
     pedido = cursor.fetchone()
     return pedido
 
+def get_amount_pedidos():
+    conn = get_conn()
+    cursor = conn.cursor()
+    cursor.execute('SELECT COUNT(*) FROM pedido;')
+    amount = cursor.fetchone()
+    return amount
+
 # Comuna
 def get_comuna_and_region_by_comuna_name(name):
     conn = get_conn()
@@ -84,7 +98,13 @@ def get_comuna_name_and_region_name_by_comuna_id(id):
     _, region_name = region
     return nombre_com,region_name
 
-
+def get_region_name_by_region_id(id):
+    conn = get_conn()
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM region WHERE id=%s',(id,))
+    region = cursor.fetchone()
+    _, region_name = region
+    return region_name
 
 # FOTOS
 

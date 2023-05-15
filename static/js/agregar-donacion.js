@@ -107,13 +107,26 @@ const validarDonacion = () => {
     const validadorFecha = (fecha) => {
         let regex = (/(\d{4})(-)(0?[1-9]|1[012])(-)(0?[1-9]|[1-2]\d|3[01])/);
         let tag = fecha.match(regex);
-        let res = false
-        if (tag){
-            let date = new Date();
-            res = tag[1] >= date.getFullYear() && tag[3] >= date.getMonth() && tag[5] >= date.getDay();
-            console.log(date.getDate())
-        }
-        return res;
+        if (tag) {
+            let inputYear = parseInt(tag[1]);
+            let inputMonth = parseInt(tag[3]);
+            let inputDay = parseInt(tag[5]);
+            
+            let currentDate = new Date();
+            let currentYear = currentDate.getFullYear();
+            let currentMonth = currentDate.getMonth() + 1;
+            let currentDay = currentDate.getDate();
+            
+            if (inputYear > currentYear) {
+              return true;
+            } else if (inputYear === currentYear && inputMonth > currentMonth) {
+              return true;
+            } else if (inputYear === currentYear && inputMonth === currentMonth && inputDay >= currentDay) {
+              return true;
+            }
+          }
+          
+          return false;
     }
     const validadorMail = (mail) => (/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/).test(mail);
     const validadorNumero = (numero) => numero == "" || (/\d{9}/).test(numero);

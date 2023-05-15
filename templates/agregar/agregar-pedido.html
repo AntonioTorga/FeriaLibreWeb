@@ -57,6 +57,11 @@
               </div>
         </form>
     </div>
+    {% if error %}
+    <div>
+        <p>{{error}}</p>
+    </div>
+    {% endif %}
 
 {% endblock %}
 

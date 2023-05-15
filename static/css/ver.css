@@ -2,8 +2,26 @@ h1{
     font-family: "Lucida Console", "Courier New", monospace;
     font-size: xxx-large;
 }
+.overall{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+.left_right {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(126, 185, 71);
+    border: 1px solid darkolivegreen;
+    width: 50%;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 table, th, td {
     border: 1px solid;
+    padding: 5px;
     font-family: "Lucida Console", "Courier New", monospace;
 }
 tr:nth-child() {background-color: #f2f2f2;}
@@ -20,6 +38,7 @@ table {
 body {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     padding: 10px;
 }

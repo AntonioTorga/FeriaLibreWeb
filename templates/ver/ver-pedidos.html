@@ -3,6 +3,7 @@
 
 {% block content %}
     <h1>Historial de pedidos</h1>
+<div class = "overall">
     <table id="tabla-pedidos">
         <tr>
             <th scope="col" id="comuna">Comuna</th>
@@ -27,6 +28,29 @@
             {% endfor %}
         {% endif %}
     </table>
+    <div class="left_right">
+        <button id="anterior">Anterior</button>
+        <button id="siguiente" >Siguiente</button>
+    </div>
+    <script>
+        var amount = "{{metadata.amount}}";
+        var page = "{{metadata.page}}";
+        page = parseFloat(page)
+        amount = parseFloat(amount)
+        if (page+1 > amount) {
+            document.getElementById("siguiente").disabled = true;
+        }
+        else {
+            document.getElementById("siguiente").addEventListener("click", () => (window.location.href = "/ver-pedidos/"+(page+1).toString()));
+        }
+        if (page-1 < 0) {
+            document.getElementById("anterior").disabled = true;
+        }
+        else {
+            document.getElementById("anterior").addEventListener("click", () => (window.location.href = "/ver-pedidos/"+(page-1).toString()));
+        }
+    </script>
+</div>
 {% endblock %}
 
 {% block script %}
