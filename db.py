@@ -1,5 +1,4 @@
 import pymysql
-import json
 
 DB_NAME = "tarea2"
 DB_USERNAME = "cc5002"
