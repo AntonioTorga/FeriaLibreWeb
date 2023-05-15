@@ -35,7 +35,7 @@
                 <input  id="descripcion" type= "text" size = 80 name="descripcion">
             </div>
             <div id="cantidad-input" class="grupo-input"> 
-                <label for="cantidad-numero">Cantidad:</label>
+                <label for="cantidad">Cantidad:</label>
                 <input id="cantidad" type= "text" size = 10 name="cantidad">
             </div>
             <div id="nombre-input" class="grupo-input"> 
@@ -66,6 +66,6 @@
 {% endblock %}
 
 {% block script %}
-    <script lang="javascript" src= {{ url_for( 'static', filename="js/agregar-pedido.js") }}>
+    <script  src= {{ url_for( 'static', filename="js/agregar-pedido.js") }}>
     </script>
 {% endblock %}
