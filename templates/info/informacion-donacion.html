@@ -39,18 +39,13 @@
             <label>Condiciones:</label>
             <p>{{data.condiciones_retirar}}</p>
         </div>
-        <div id="foto1-info" class="grupo-info"> 
-            <label>Imagen 1:</label>
-            <img src="foto1.jpg" height=120 width=120>
+
+        {% for foto in fotos %}
+        <div class="grupo-info"> 
+            <label>Imagen:</label>
+            <img src="{{foto}}" height=120 width=120>
         </div>
-        <div id="foto2-info" class="grupo-info"> 
-            <label>Imagen 2:</label>
-            <img src="foto2.jpg" height=120 width=120>
-        </div>
-        <div id="foto3-info" class="grupo-info"> 
-            <label>Imagen 3:</label>
-            <img src="foto3.jpg" height=120 width=120>
-        </div>
+        {% endfor %}
         <div id="nombre-info" class="grupo-info"> 
             <label>Nombre solicitante:</label>
             <p>{{data.nombre}}</p>

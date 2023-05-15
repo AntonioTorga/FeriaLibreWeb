@@ -21,7 +21,7 @@
             <td>{{donacion.cantidad}}</td>
             <td>{{donacion.fecha_disponibilidad}}</td>
             <td>{{donacion.nombre}}</td>
-            <td><img src="foto1.jpg" height=120 width=120></th>
+            <td><img src="{{donacion.path_image}}" height=120 width=120></th>
         </tr>
         <script>
             document.getElementById("{{donacion.id}}").addEventListener("click", () => (window.location.href = "/info-donacion/{{donacion.id}}"))

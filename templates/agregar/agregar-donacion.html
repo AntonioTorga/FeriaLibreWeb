@@ -5,7 +5,7 @@
 {% block content %}
     <h1>¡Haz una donación!</h1>
     <div class="container">
-        <form class="formulario" action="/donar" method="POST" id="form-donacion">
+        <form class="formulario" action="/donar" method="POST" id="form-donacion" enctype="multipart/form-data" >
             <div id="region-input" class="grupo-input"> 
                 <label for="region">Región:</label>
                 <input id = "region" list="regiones" name="region">
