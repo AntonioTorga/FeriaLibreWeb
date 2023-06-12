@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}¡Feria Online! Estadísticas {% endblock %}
+
+{% block style1%}
+<style>
+    p{
+        background-color: white;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<h1>¡Feria Online! Estadísticas</h1>
+
+<div class = "stats-container">
+    <figure class = "highcharts-figure">
+        <div id = "container"></div>
+            <p class = "highcharts-description">
+                Gráfico de torta que muestra la cantidad de donaciones por categoría.
+            </p>
+    </figure>
+</div>
+<div class = "stats-container">
+    <figure class = "highcharts-figure">
+        <div id = "container2"></div>
+            <p class = "highcharts-description">
+                Gráfico de torta que muestra la cantidad de pedidos por categoría.
+            </p>
+    </figure>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script  src= {{url_for("static",filename="js/stats.js")}}>
+</script>
+{% endblock %}

@@ -1,3 +1,4 @@
+import sys
 import pymysql
 
 DB_NAME = "tarea2"
@@ -48,6 +49,13 @@ def get_amount_donaciones():
     cursor.execute('SELECT COUNT(*) FROM donacion;')
     amount = cursor.fetchone()
     return amount
+
+def get_amount_donaciones_by_type():
+    conn = get_conn()
+    cursor = conn.cursor()
+    cursor.execute('SELECT tipo, COUNT(*) FROM donacion GROUP BY tipo;')
+    amount = cursor.fetchall()
+    return amount
 # PEDIDOS
 def insert_into_pedido(comuna_id, tipo, descripcion, cantidad, nombre_solicitante, email_solicitante, celular_solicitante):
     conn = get_conn()
@@ -76,6 +84,13 @@ def get_amount_pedidos():
     cursor = conn.cursor()
     cursor.execute('SELECT COUNT(*) FROM pedido;')
     amount = cursor.fetchone()
+    return amount
+
+def get_amount_pedidos_by_type():
+    conn = get_conn()
+    cursor = conn.cursor()
+    cursor.execute('SELECT tipo, COUNT(*) FROM pedido GROUP BY tipo;')
+    amount = cursor.fetchall()
     return amount
 
 # Comuna

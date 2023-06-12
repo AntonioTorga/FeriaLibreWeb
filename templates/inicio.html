@@ -2,6 +2,9 @@
 {% block title %}¡Feria Online! Inicio{% endblock %}
 
 {%block style1%}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+crossorigin=""/>
 <link
     rel= "stylesheet"
     href = "{{ url_for('static', filename= 'css/inicio.css') }}"
@@ -14,8 +17,15 @@
         <a class="navbar-page" href="/pedir">Agregar pedido</a>
         <a class="navbar-page" href="/ver-donaciones/0">Ver donaciones</a>
         <a class="navbar-page" href="/ver-pedidos/0">Ver pedidos</a>
+        <a class="navbar-page" href="/stats">Estadísticas</a>
     </div>
-    <div class="image">
-        <img  src="{{url_for('static', filename= 'media/horrible.jpg')}}" alt="¡Feria Online WUJU!" width="640" height="428">
-    </div>
+    <div id="map">#</div>
+{% endblock %}
+
+{% block script %}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+crossorigin=""></script>
+<script  src= {{url_for("static",filename="js/inicio.js")}}>
+</script>
 {% endblock %}

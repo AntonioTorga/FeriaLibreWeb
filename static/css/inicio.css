@@ -22,3 +22,7 @@ body {
 .image {
     padding-top: 10px;
 }
+#map { height: 450px;
+     width: 90%;
+     border: 2px solid black;
+     margin: 10px;}
